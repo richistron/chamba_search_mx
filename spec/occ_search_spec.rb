@@ -1,11 +1,11 @@
 require "spec_helper"
 
 describe OccSearch do
-  it "has a version number" do
-    expect(OccSearch::VERSION).not_to be nil
-  end
-
-  it "does something useful" do
-    expect(false).to eq(true)
+  context 'simple search' do
+    # pending 'should return an array of objects'
+    # pending 'every object should be a instance of OccJob'
+    # pending 'every object should a title property'
+    # pending 'every object should a url property'
+    # pending 'every object should a email property'
   end
 end

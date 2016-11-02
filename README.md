@@ -1,8 +1,8 @@
-# OccSearch
+# OCC MX Search
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/occ_search`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This gem allows you to perform searches by doing scrapping to occ.com.mx. It
+provides links, sumarys, emails and userful information. This gem was created
+for reaserch purpuses it only.
 
 ## Installation
 
@@ -22,7 +22,14 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+jobs = OccSearch.find 'ruby developer'
+jobs.each do |job|
+  puts job.url
+  puts job.title
+  puts job.email
+end
+```
 
 ## Development
 
@@ -32,7 +39,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/occ_search.
+Bug reports and pull requests are welcome on GitHub at https://github.com/richistron/occ_search.
 
 
 ## License
