@@ -23,12 +23,12 @@ module OccSearch
     end
 
     def current_location
-      return location_not_found unless @locations.has_key? @options[:location]
-      @locations[@options[:location]]
+      return location_not_found unless @locations.has_key? @options[:location].to_sym
+      @locations[@options[:location].to_sym]
     end
 
     def location_not_found
-      raise ArgumentError, ":location => :option | avalilable options #{@locations.keys}"
+      raise ArgumentError, "location: {OPTION} | avalilable options #{@locations.keys.join(', ')}"
     end
 
     def salary

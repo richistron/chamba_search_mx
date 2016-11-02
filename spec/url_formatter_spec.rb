@@ -25,19 +25,19 @@ describe OccSearch::UrlFormatter do
     it 'should parse url for jalisco state :location => :jal' do
       search = 'Ruby on Rails'
       spec = '/empleos-en-jalisco/ruby-on-rails'
-      expect(formatter.format(search, :location => :jal )).to eq(spec)
+      expect(formatter.format(search, location: 'jal' )).to eq(spec)
     end
 
     it 'passing a invalid location option should raise an ArgumentError' do
       search = 'Ruby on Rails'
       spec = '/empleos-en-jalisco/ruby-on-rails'
-      expect{ formatter.format(search, :location => :jaliscolion ) }.to raise_error(ArgumentError)
+      expect{ formatter.format(search, location: 'jaliscolion' ) }.to raise_error(ArgumentError)
     end
 
     # it 'should be able to parse salary' do
       # search = 'Ruby on Rails'
       # spec = '/5000-10000-pesos/ruby-on-rails'
-      # expect{ formatter.format(search, :salary => :from5000to10000 ) }.to raise_error(ArgumentError)
+      # expect{ formatter.format(search, salary: "0-5000" ) }.to raise_error(ArgumentError)
     # end
   end
 end
