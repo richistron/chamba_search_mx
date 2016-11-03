@@ -30,14 +30,35 @@ describe OccSearch::UrlFormatter do
 
     it 'passing a invalid location option should raise an ArgumentError' do
       search = 'Ruby on Rails'
-      spec = '/empleos-en-jalisco/ruby-on-rails'
       expect{ formatter.format(search, location: 'jaliscolion' ) }.to raise_error(ArgumentError)
     end
 
-    # it 'should be able to parse salary' do
-      # search = 'Ruby on Rails'
-      # spec = '/5000-10000-pesos/ruby-on-rails'
-      # expect{ formatter.format(search, salary: "0-5000" ) }.to raise_error(ArgumentError)
-    # end
+    it 'should be able to parse salary' do
+      search = 'Ruby on Rails'
+      spec = '/empleos-en-mexico-y-el-mundo/0-a-5000-pesos/ruby-on-rails'
+      expect(formatter.format(search, salary: "0-5000" )).to eq(spec)
+    end
+
+    it 'should raise an Argument error' do
+      search = 'Ruby on Rails'
+      expect{ formatter.format(search, salary: "3000" ) }.to raise_error(ArgumentError)
+    end
+
+    it 'should be able to parse since' do
+      search = 'Ruby on Rails'
+      spec = '/empleos-en-mexico-y-el-mundo/desde-hace-3-dias/ruby-on-rails'
+      expect(formatter.format(search, days: 3 )).to eq(spec)
+    end
+
+    it 'should raise an Argument error' do
+      search = 'Ruby on Rails'
+      expect{ formatter.format(search, days: 5000 ) }.to raise_error(ArgumentError)
+    end
+
+    it 'complex options case' do
+      spec = '/empleos-en-jalisco/15000-a-20000-pesos/desde-hace-4-dias/web-developer'
+      search = 'Web Developer'
+      expect( formatter.format(search, location: 'jal', days: 4, salary: '15000-20000') ).to eq(spec)
+    end
   end
 end
