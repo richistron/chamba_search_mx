@@ -3,3 +3,4 @@ FrozenStringLiteralComment:
 AllCops:
   Exclude:
     - 'occ_search.gemspec'
+    - 'spec/pagination_url_scrapper_spec.rb'

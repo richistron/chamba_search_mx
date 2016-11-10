@@ -1,6 +1,6 @@
-require 'occ_search/days'
-require 'occ_search/locations'
-require 'occ_search/salaries'
+require 'occ_search/factories/days'
+require 'occ_search/factories/locations'
+require 'occ_search/factories/salaries'
 
 module OccSearch
   ##
@@ -9,12 +9,10 @@ module OccSearch
   # @see OccSearch::SALARIES
   # @see OccSearch::DAYS
   class UrlFormatter
-    def initialize(locations = OccSearch::LOCATIONS,
-                   salaries = OccSearch::SALARIES,
-                   days = OccSearch::DAYS)
-      @locations = locations
-      @salaries = salaries
-      @days = days
+    def initialize(opts = {})
+      @locations = opts[:locations] || OccSearch::LOCATIONS
+      @salaries = opts[:salaries] || OccSearch::SALARIES
+      @days = opts[:days] || OccSearch::DAYS
     end
 
     ##

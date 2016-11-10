@@ -1,7 +1,5 @@
-require 'occ_search/base_url'
-require 'occ_search/pagination_url_scrapper'
-require 'occ_search/url_formatter'
 require 'occ_search/version'
+require 'occ_search/url_formatter'
 
 ##
 # OccSearch module allows you to search jobs and get back ruby object with
