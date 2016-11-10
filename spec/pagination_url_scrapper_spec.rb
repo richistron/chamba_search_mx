@@ -1,4 +1,4 @@
-require "spec_helper"
+require 'spec_helper'
 
 describe OccSearch::PaginationUrlScrapper do
   url_scrapper = OccSearch::PaginationUrlScrapper.new
@@ -8,10 +8,18 @@ describe OccSearch::PaginationUrlScrapper do
     expect(url_scrapper.find(url)).to be_instance_of(Array)
   end
 
-  it 'should return a array of urls' do
+  context 'getting pagination' do
     url = '/empleos-en-jalisco/desde-hace-60-dias/web-developer'
     urls = url_scrapper.find(url)
-    expect(urls[0]).to match('/empleos-en-jalisco/desde-hace-60-dias/web-developer')
-    expect(urls[1]).to match('/empleos-en-jalisco/desde-hace-60-dias/web-developer?page=2')
+
+    it 'should return a array of urls' do
+      spec = '/empleos-en-jalisco/desde-hace-60-dias/web-developer'
+      expect(urls[0]).to match(spec)
+    end
+
+    it 'should return a array of urls' do
+      spec = '/empleos-en-jalisco/desde-hace-60-dias/web-developer?page=2'
+      expect(urls[1]).to match(spec)
+    end
   end
 end

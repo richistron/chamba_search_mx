@@ -1,5 +1,5 @@
-require "nokogiri"
-require "open-uri"
+require 'nokogiri'
+require 'open-uri'
 module OccSearch
   ##
   # OccSearch::PaginationUrlScrapper is used for getting the pagination urls
@@ -12,6 +12,7 @@ module OccSearch
     def initialize(base_url = OccSearch::BASE_URL)
       @base_url = base_url
     end
+
     ##
     # finds pagination search urls
     #
@@ -19,21 +20,25 @@ module OccSearch
     # @return array
     def find(url)
       @nokogiri_page = get_url_content url
-      get_pages.map! { |p| p = (p == '#') ? url : p }
+      find_pages.map! { |p| p == '#' ? url : p }
     end
+
     private
+
     ##
     # @return <array> of url strings
-    def get_pages
+    def find_pages
       nokogiri_page_links.map do |p|
         p.css('a').attribute('href').text
       end
     end
+
     ##
     # @return <object> Nokogiri HTML element
     def nokogiri_page_links
       @nokogiri_page.css('#numeracion_sr').css('.actual_m,.pagina_m')
     end
+
     ##
     # @param <url> string
     # @return <Onject> Nokogiri HTML object
