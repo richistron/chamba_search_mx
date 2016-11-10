@@ -1,6 +1,6 @@
-require 'occ_search/factories/days'
-require 'occ_search/factories/locations'
-require 'occ_search/factories/salaries'
+require 'occ_search/days'
+require 'occ_search/locations'
+require 'occ_search/salaries'
 
 module OccSearch
   ##

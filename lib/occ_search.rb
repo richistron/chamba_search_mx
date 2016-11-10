@@ -10,8 +10,5 @@ module OccSearch
   # def self.find(query, *opts)
   # generate occ search url
   # get pagination
-  # get all job pages
-  # iterate and get every job url
-  # get job models
-  # end
+  # get all jobs
 end
