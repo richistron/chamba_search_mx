@@ -1,2 +1,5 @@
 FrozenStringLiteralComment:
   Enabled: false
+AllCops:
+  Exclude:
+    - 'occ_search.gemspec'

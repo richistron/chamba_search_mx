@@ -36,5 +36,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec', '~> 3.0'
   spec.add_development_dependency 'byebug', '~> 9.0'
   spec.add_development_dependency 'rubocop', '~> 0.4'
+  spec.add_development_dependency 'nyan-cat-formatter', '~> 0.11'
   spec.add_dependency 'nokogiri', '~> 1.6'
 end
