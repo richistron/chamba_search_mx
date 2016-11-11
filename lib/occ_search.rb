@@ -1,5 +1,6 @@
 require 'occ_search/html_page'
 require 'occ_search/pagination'
+require 'occ_search/job_page'
 require 'occ_search/factories/base_url'
 require 'occ_search/url_formatter'
 require 'occ_search/factories/days'
@@ -14,5 +15,10 @@ module OccSearch
   # url = formatter.format 'ruby on rails', location: 'jal', days: 30,
   # salary: '20000-30000'
   # pagination = OccSearch::Pagination.new
-  # pagination.urls
+  # pagination.load url
+  # pages = pagination.urls.map do |page_url|
+  #   page = OccSearch::JobPage.new
+  #   page.load page_url
+  #   page
+  # end
 end
