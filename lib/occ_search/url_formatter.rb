@@ -4,7 +4,7 @@ module OccSearch
   # @see OccSearch::LOCATIONS
   # @see OccSearch::SALARIES
   # @see OccSearch::DAYS
-  class SearchUrl
+  class UrlFormatter
     def initialize(opts = {})
       @locations = opts[:locations] || OccSearch::LOCATIONS
       @salaries = opts[:salaries] || OccSearch::SALARIES

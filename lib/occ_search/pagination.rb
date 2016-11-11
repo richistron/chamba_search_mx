@@ -1,19 +1,21 @@
 module OccSearch
   ##
   # helps find a search page pagination links
-  class SearchPagination
+  class Pagination
+    attr_reader :urls
     ##
     # @param <hash>
     # @see OccSearch::BASE_URL
     def initialize(opts = {})
+      @urls = []
       @http = opts[:http] || OccSearch::HTMLPage.new
     end
 
     ##
     # @param <string> search page url
-    def find(url)
+    def load(url)
       @http.load url
-      find_pages.map! { |p| p == '#' ? url : p }
+      @urls = find_pages.map! { |p| p == '#' ? url : p }
     end
 
     private

@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe OccSearch::SearchUrl do
-  formatter = OccSearch::SearchUrl.new
+describe OccSearch::UrlFormatter do
+  formatter = OccSearch::UrlFormatter.new
 
   context 'testing query string cases' do
     it 'should parse a url without filters' do

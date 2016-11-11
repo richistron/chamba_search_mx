@@ -1,7 +1,7 @@
 require 'occ_search/html_page'
-require 'occ_search/search_pagination'
+require 'occ_search/pagination'
 require 'occ_search/factories/base_url'
-require 'occ_search/search_url'
+require 'occ_search/url_formatter'
 require 'occ_search/factories/days'
 require 'occ_search/factories/locations'
 require 'occ_search/factories/salaries'
@@ -10,8 +10,9 @@ require 'occ_search/factories/salaries'
 # OccSearch module allows you to search jobs and get back ruby object with
 # useful information about the position openenings published on occ.com.mx
 module OccSearch
-  # def self.find(query, *opts)
-  # get search url
-  # get pagination
-  # get all jobs
+  # formater = OccSearch::UrlFormatter
+  # url = formatter.format 'ruby on rails', location: 'jal', days: 30,
+  # salary: '20000-30000'
+  # pagination = OccSearch::Pagination.new
+  # pagination.urls
 end
