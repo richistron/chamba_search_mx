@@ -1,7 +1,3 @@
-require 'occ_search/factories/days'
-require 'occ_search/factories/locations'
-require 'occ_search/factories/salaries'
-
 module OccSearch
   ##
   # it formats occ urls base on hash options
