@@ -1,4 +1,6 @@
 module OccSearch
+  ##
+  # available locations
   LOCATIONS = {
     ags:      'empleos-en-aguascalientes',
     bcn:      'empleos-en-baja-california',

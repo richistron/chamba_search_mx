@@ -1,4 +1,6 @@
 module OccSearch
+  ##
+  # days options
   DAYS = {
     '1': 'ayer',
     '2': 'desde-hace-2-dias',

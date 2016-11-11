@@ -3,11 +3,11 @@ require 'open-uri'
 
 module OccSearch
   ##
-  # helps find a search page pagination links
+  # loads web page using nokogiri
   class HTMLPage
     attr_reader :content
     ##
-    # @param <hash>
+    # @param <hash> options
     # @see OccSearch::BASE_URL
     def initialize(opts = {})
       @base_url = opts[:base_url] || OccSearch::BASE_URL

@@ -1,4 +1,6 @@
 module OccSearch
+  ##
+  # available salary ranges
   SALARIES = {
     "0-5000":       '0-a-5000-pesos',
     "5000-10000":   '5000-a-10000-pesos',
