@@ -66,9 +66,53 @@ describe OccSearch do
   # SLOW_TESTS=true rspec
   if ENV['SLOW_TESTS']
     context 'slow tests' do
-      # TODO: create tests for the jobs array
-      # jobs = OccSearch.find(search: 'web developer', days: 14,
-      # location: 'jal', salary: '15000-20000')
+      search_options = {
+        search: 'web developer',
+        days: 14,
+        location: 'jal',
+        salary: '15000-20000'
+      }
+      jobs = OccSearch.find(search_options)
+
+      it 'should have a businesses method' do
+        businesses = jobs.map(&:businesses)
+        expect(businesses).to all(be_an(String))
+      end
+
+      it 'should have a company method' do
+        company = jobs.map(&:company)
+        expect(company).to all(be_an(String))
+      end
+
+      it 'should have a contact_email method' do
+        contact_email = jobs.map(&:contact_email)
+        expect(contact_email).to all(be_an(String))
+      end
+
+      it 'should have a contact_name method' do
+        contact_name = jobs.map(&:contact_name)
+        expect(contact_name).to all(be_an(String))
+      end
+
+      it 'should have a description method' do
+        description = jobs.map(&:description)
+        expect(description).to all(be_an(String))
+      end
+
+      it 'should have a sector method' do
+        sector = jobs.map(&:sector)
+        expect(sector).to all(be_an(String))
+      end
+
+      it 'should have a title method' do
+        title = jobs.map(&:title)
+        expect(title).to all(be_an(String))
+      end
+
+      it 'should have a url method' do
+        url = jobs.map(&:url)
+        expect(url).to all(be_an(String))
+      end
     end
   end
 end
