@@ -12,7 +12,8 @@ module OccSearch
     # @param <string> url
     # @return <class> self
     def load(url = '')
-      @http.load url
+      @url = url
+      @http.load @url
       self
     end
 
@@ -62,6 +63,20 @@ module OccSearch
     # @return <string> description
     def description
       content.css('.txt2_jo').text
+    end
+
+    def load_clean_object
+      {
+        # businesses: businesses,
+        company: company,
+        contact_email: contact_email,
+        contact_name: contact_name,
+        description: description,
+        # occ_id: occ_id,
+        # sector: sector,
+        title: title,
+        url: @url
+      }
     end
 
     private

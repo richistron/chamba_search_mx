@@ -10,6 +10,7 @@ module OccSearch
     # @param <string> search page url
     def load(url)
       @http.load url
+      self
     end
 
     ##

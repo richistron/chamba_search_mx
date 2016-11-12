@@ -38,6 +38,12 @@ describe OccSearch::UrlFormatter do
       expect(&test).to raise_error(ArgumentError)
     end
 
+    it 'saraly should have a default behaiur' do
+      search = 'Ruby on Rails'
+      spec = '/empleos-en-mexico-y-el-mundo/ruby-on-rails'
+      expect(formatter.format(search, salary: 'default')).to eq(spec)
+    end
+
     it 'should be able to parse salary' do
       search = 'Ruby on Rails'
       spec = '/empleos-en-mexico-y-el-mundo/0-a-5000-pesos/ruby-on-rails'
@@ -54,6 +60,12 @@ describe OccSearch::UrlFormatter do
       search = 'Ruby on Rails'
       spec = '/empleos-en-mexico-y-el-mundo/desde-hace-3-dias/ruby-on-rails'
       expect(formatter.format(search, days: 3)).to eq(spec)
+    end
+
+    it 'should accept a default option' do
+      search = 'Ruby on Rails'
+      spec = '/empleos-en-mexico-y-el-mundo/ruby-on-rails'
+      expect(formatter.format(search, days: 'default')).to eq(spec)
     end
 
     it 'should raise an Argument error' do

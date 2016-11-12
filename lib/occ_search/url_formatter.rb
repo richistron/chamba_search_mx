@@ -61,6 +61,7 @@ module OccSearch
     # @raise Argument error when option is not valid
     def salary
       return unless @options.key? :salary
+      return if @options[:salary] == 'default'
       error = proc { argument_error 'salary', @salaries }
       error.call unless option_exists?(@salaries, :salary)
       "/#{@salaries[@options[:salary].to_sym]}"
@@ -71,6 +72,7 @@ module OccSearch
     # @raise Argument error when option is not valid
     def days
       return unless @options.key? :days
+      return if @options[:days] == 'default'
       error = proc { argument_error 'days', @days }
       error.call unless option_exists?(@days, :days)
       "/#{@days[@options[:days].to_s.to_sym]}"
