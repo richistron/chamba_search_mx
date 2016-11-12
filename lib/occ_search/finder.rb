@@ -20,11 +20,15 @@ module OccSearch
 
     def validate_arguments
       error_msg = 'search must be a non empty string'
-      raise ArgumentError, error_msg if search_valid?
+      raise ArgumentError, error_msg unless search_valid?
     end
 
     def search_valid?
-      @search.class != String || @search.empty?
+      if @search.class != String || @search.empty?
+        false
+      else
+        true
+      end
     end
 
     def find_jobs

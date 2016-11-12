@@ -11,6 +11,14 @@ describe OccSearch::Finder do
     it 'should not allows integer for searches' do
       expect { finder.find(5) }.to raise_error(ArgumentError)
     end
+
+    it 'should not allows nil for searches' do
+      expect { finder.find(nil) }.to raise_error(ArgumentError)
+    end
+
+    it 'should not allows boolean for searches' do
+      expect { finder.find(true) }.to raise_error(ArgumentError)
+    end
   end
 
   # this tests are actually doing networks requests if you want to test this
