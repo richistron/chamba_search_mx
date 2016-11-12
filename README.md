@@ -23,7 +23,7 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-jobs = OccSearch.find 'ruby developer'
+jobs = OccSearch.find 'ruby developer', location: 'jal', days: 14, salary: '15000-20000'
 jobs.each do |job|
   puts job.url
   puts job.title
