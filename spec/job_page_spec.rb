@@ -18,36 +18,8 @@ describe OccSearch::JobPage do
         expect(job_page.load(url)).to be_instance_of(OccSearch::JobPage)
       end
 
-      it "title should return a string:'#{job_page.title}'" do
-        expect(job_page.title).to be_instance_of(String)
-      end
-
-      it "company should return a string:'#{job_page.company}'" do
-        expect(job_page.company).to be_instance_of(String)
-      end
-
-      it "sector should return a string:'#{job_page.sector}'" do
-        expect(job_page.sector).to be_instance_of(String)
-      end
-
-      it "businesses should return a string:'#{job_page.businesses}'" do
-        expect(job_page.businesses).to be_instance_of(String)
-      end
-
-      it "occ_id should return a string:'#{job_page.occ_id}'" do
-        expect(job_page.occ_id).to be_instance_of(String)
-      end
-
-      it "contact_name should return a string:'#{job_page.contact_name}'" do
-        expect(job_page.contact_name).to be_instance_of(String)
-      end
-
-      it "contact_email should return a string:'#{job_page.contact_email}'" do
-        expect(job_page.contact_email).to be_instance_of(String)
-      end
-
-      it "contact_email should return a string:'#{job_page.description}'" do
-        expect(job_page.description).to be_instance_of(String)
+      it 'data should be an instance of OccSearch::JobDecorator' do
+        expect(job_page.data).to be_instance_of(OccSearch::JobDecorator)
       end
     end
   end

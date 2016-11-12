@@ -6,6 +6,7 @@ module OccSearch
     # @param <hash> options
     def initialize(opts = {})
       @http = opts[:http] || OccSearch::HTMLPage.new
+      @job_decorator = opts[:job_decorator] || OccSearch::JobDecorator
     end
 
     ##
@@ -15,6 +16,30 @@ module OccSearch
       @url = url
       @http.load @url
       self
+    end
+
+    ##
+    # @return <OccSearch::JobDecorator> instance
+    def data
+      @job_decorator.new decorator_data
+    end
+
+    private
+
+    ##
+    # data used for @job_decorator
+    # @return <Hash>
+    def decorator_data
+      {
+        businesses: businesses,
+        company: company,
+        contact_email: contact_email,
+        contact_name: contact_name,
+        description: description,
+        sector: sector,
+        title: title,
+        url: @url
+      }
     end
 
     ##
@@ -64,22 +89,6 @@ module OccSearch
     def description
       content.css('.txt2_jo').text
     end
-
-    def load_clean_object
-      {
-        # businesses: businesses,
-        company: company,
-        contact_email: contact_email,
-        contact_name: contact_name,
-        description: description,
-        # occ_id: occ_id,
-        # sector: sector,
-        title: title,
-        url: @url
-      }
-    end
-
-    private
 
     ##
     # @return <string> contact_name_text

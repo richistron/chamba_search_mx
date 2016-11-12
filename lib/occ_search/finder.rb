@@ -32,7 +32,7 @@ module OccSearch
     end
 
     def find_jobs
-      @jobs = job_urls.map { |url| @job.load(url).load_clean_object }
+      @jobs = job_urls.map { |url| @job.load(url).data }
     end
 
     def job_urls
