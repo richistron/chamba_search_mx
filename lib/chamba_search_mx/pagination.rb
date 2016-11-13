@@ -1,14 +1,14 @@
-module OccSearch
+module ChambaSearchMx
   ##
   # provides the url of the search  pagination
   class Pagination
     attr_reader :urls
     ##
     # @param <hash> opts
-    # @see OccSearch::BASE_URL
+    # @see ChambaSearchMx::BASE_URL
     def initialize(opts = {})
       @urls = []
-      @http = opts[:http] || OccSearch::HTMLPage.new
+      @http = opts[:http] || ChambaSearchMx::HTMLPage.new
     end
 
     ##

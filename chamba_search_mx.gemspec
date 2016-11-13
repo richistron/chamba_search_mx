@@ -1,16 +1,16 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'occ_search/version'
+require 'chamba_search_mx/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'occ_search'
-  spec.version       = OccSearch::VERSION
+  spec.name          = 'chamba_search_mx'
+  spec.version       = ChambaSearchMx::VERSION
   spec.authors       = ['Ricardo Rivas G.']
   spec.email         = ['richistron@gmail.com']
 
-  spec.summary       = 'This gem allows you to search jobs from occ.com.mx'
-  spec.description   = 'Occ scrapper'
+  spec.summary       = 'This gem allows you to search jobs from the internets'
+  spec.description   = 'Job Finder for Mexico'
   # spec.homepage      = 'TODO: Put your gem's website or public repo URL here.'
   spec.license       = 'MIT'
 

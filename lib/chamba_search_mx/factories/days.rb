@@ -1,4 +1,4 @@
-module OccSearch
+module ChambaSearchMx
   ##
   # days options
   DAYS = {

@@ -1,15 +1,13 @@
-# OCC MX Search
+# Chamba Search MX
 
-This gem allows you to perform searches by doing scrapping to occ.com.mx. It
-provides links, sumarys, emails and userful information. This gem was created
-for reaserch purpuses it only.
+This gem allows you to find jobs in México.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'occ_search'
+gem 'chamba_search_mx'
 ```
 
 And then execute:
@@ -18,17 +16,51 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install occ_search
+    $ gem install chamba_search_mx
 
 ## Usage
 
 ```ruby
-jobs = OccSearch.find 'ruby developer', location: 'jal', days: 14, salary: '15000-20000'
+require 'chamba_search_mx'
+
+jobs = ChambaSearchMx.find 'ruby developer'
+
 jobs.each do |job|
   puts job.url
   puts job.title
   puts job.email
 end
+```
+
+## Options
+
+Locations
+
+```
+ags, bcn, bcs, cam, chi, chp, coa, col, default, df, dgo, gro, gto, hgo,
+jal, mch, mex, mor, mx, nay, nl, oax, pue, qr, qro, sina, slp, sono, tab,
+tam, tlx, us, ver, world, yuc, zac
+```
+
+Salaries
+```
+0-5000, 5000-10000, 10000-15000, 15000-20000, 20000-30000, 30000-40000,
+40000-50000, 50000-65000, 65000-80000, 80000
+```
+
+Days
+```
+1, 2, 3, 4, 5, 6, 7, 14, 30, 60
+```
+
+Example
+```ruby
+options = {
+  location: 'mx',
+  days: 2,
+  salary: '15000-20000'
+}
+ChambaSearchMx.find 'ruby developer', options
 ```
 
 ## Development
@@ -39,7 +71,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/richistron/occ_search.
+Bug reports and pull requests are welcome on GitHub at https://github.com/richistron/chamba_search_mx.
 
 
 ## License

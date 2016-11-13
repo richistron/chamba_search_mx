@@ -1,14 +1,14 @@
-module OccSearch
+module ChambaSearchMx
   ##
-  # it formats occ urls base on hash options
-  # @see OccSearch::LOCATIONS
-  # @see OccSearch::SALARIES
-  # @see OccSearch::DAYS
+  # it formats urls base on hash options
+  # @see ChambaSearchMx::LOCATIONS
+  # @see ChambaSearchMx::SALARIES
+  # @see ChambaSearchMx::DAYS
   class UrlFormatter
     def initialize(opts = {})
-      @locations = opts[:locations] || OccSearch::LOCATIONS
-      @salaries = opts[:salaries] || OccSearch::SALARIES
-      @days = opts[:days] || OccSearch::DAYS
+      @locations = opts[:locations] || ChambaSearchMx::LOCATIONS
+      @salaries = opts[:salaries] || ChambaSearchMx::SALARIES
+      @days = opts[:days] || ChambaSearchMx::DAYS
     end
 
     ##

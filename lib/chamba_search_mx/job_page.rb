@@ -1,12 +1,12 @@
-module OccSearch
+module ChambaSearchMx
   ##
   # Job unique page
   class JobPage
     ##
     # @param <hash> options
     def initialize(opts = {})
-      @http = opts[:http] || OccSearch::HTMLPage.new
-      @job_decorator = opts[:job_decorator] || OccSearch::JobDecorator
+      @http = opts[:http] || ChambaSearchMx::HTMLPage.new
+      @job_decorator = opts[:job_decorator] || ChambaSearchMx::JobDecorator
     end
 
     ##
@@ -19,7 +19,7 @@ module OccSearch
     end
 
     ##
-    # @return <OccSearch::JobDecorator> instance
+    # @return <ChambaSearchMx::JobDecorator> instance
     def data
       @job_decorator.new decorator_data
     end
@@ -63,12 +63,6 @@ module OccSearch
     ##
     # @return <string> businesses
     def businesses
-      content.css('#bg_triangle_ba dd:eq(3)').text
-    end
-
-    ##
-    # @return <string> occ_id
-    def occ_id
       content.css('#bg_triangle_ba dd:eq(3)').text
     end
 

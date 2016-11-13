@@ -1,13 +1,13 @@
-module OccSearch
+module ChambaSearchMx
   ##
   # finds jobs and returns simplified objects of them selfs
   class Finder
     attr_reader :jobs
     def initialize(options = {})
-      @url_formatter = options[:url_formatter] || OccSearch::UrlFormatter.new
-      @pagination = options[:pagination] || OccSearch::Pagination.new
-      @search_page = options[:search_page] || OccSearch::SearchPage.new
-      @job = options[:job] || OccSearch::JobPage.new
+      @formatter = options[:formatter] || ChambaSearchMx::UrlFormatter.new
+      @pagination = options[:pagination] || ChambaSearchMx::Pagination.new
+      @search_page = options[:search_page] || ChambaSearchMx::SearchPage.new
+      @job = options[:job] || ChambaSearchMx::JobPage.new
     end
 
     def find(search, options = {})
@@ -45,7 +45,7 @@ module OccSearch
 
     def format_url
       opts = search_options
-      @url_formatter.format @search, opts
+      @formatter.format @search, opts
     end
 
     def search_options

@@ -1,4 +1,4 @@
-module OccSearch
+module ChambaSearchMx
   ##
   # available locations
   LOCATIONS = {

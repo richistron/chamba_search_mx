@@ -2,4 +2,4 @@ FrozenStringLiteralComment:
   Enabled: false
 AllCops:
   Exclude:
-    - 'occ_search.gemspec'
+    - 'chamba_search_mx.gemspec'

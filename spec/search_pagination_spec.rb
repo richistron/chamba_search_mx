@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe OccSearch::Pagination do
+describe ChambaSearchMx::Pagination do
   if ENV['SLOW_TESTS']
     context 'slow tests' do
       url = '/empleos-en-jalisco/desde-hace-60-dias/web-developer'
-      pagination = OccSearch::Pagination.new
+      pagination = ChambaSearchMx::Pagination.new
       pagination.load url
 
       it 'should return a array of urls' do

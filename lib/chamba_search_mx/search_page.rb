@@ -1,9 +1,9 @@
-module OccSearch
+module ChambaSearchMx
   ##
-  # Occ search landing page
+  # search landing page
   class SearchPage
     def initialize(opts = {})
-      @http = opts[:http] || OccSearch::HTMLPage.new
+      @http = opts[:http] || ChambaSearchMx::HTMLPage.new
     end
 
     ##

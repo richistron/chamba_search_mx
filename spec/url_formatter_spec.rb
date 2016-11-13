@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe OccSearch::UrlFormatter do
-  formatter = OccSearch::UrlFormatter.new
+describe ChambaSearchMx::UrlFormatter do
+  formatter = ChambaSearchMx::UrlFormatter.new
 
   context 'testing query string cases' do
     it 'should parse a url without filters' do

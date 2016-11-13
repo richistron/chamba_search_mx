@@ -6,9 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [v0.1.0]
 ### Added
-- OccSearch module added by @richistron
-- OccSearch.find 'query', location: '', days: '', salary: '' by @richistron
+- ChambaSearchMx module added by @richistron
+- ChambaSearchMx.find 'query', location: '', days: '', salary: '' by @richistron
 - rspec tests added by @richistron
 
-[v0.1.0]:https://github.com/richistron/occ_search/tree/v0.1.0
+[v0.1.0]:https://github.com/richistron/chamba_search_mx/tree/v0.1.0
 

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe OccSearch::JobDecorator do
+describe ChambaSearchMx::JobDecorator do
   context 'smoke tests' do
     options = {
       businesses: 'businesses',
@@ -8,12 +8,11 @@ describe OccSearch::JobDecorator do
       contact_email: 'contact_email',
       contact_name: 'contact_name',
       description: 'description',
-      occ_id: 'occ_id',
       sector: 'sector',
       title: 'title',
       url: 'url'
     }
-    job_decorator = OccSearch::JobDecorator.new options
+    job_decorator = ChambaSearchMx::JobDecorator.new options
 
     it 'businesses should return a string' do
       expect(job_decorator.businesses).to be_instance_of(String)
@@ -33,10 +32,6 @@ describe OccSearch::JobDecorator do
 
     it 'description should return a string' do
       expect(job_decorator.description).to be_instance_of(String)
-    end
-
-    it 'occ_id should return a string' do
-      expect(job_decorator.occ_id).to be_instance_of(String)
     end
 
     it 'sector should return a string' do
@@ -69,10 +64,6 @@ describe OccSearch::JobDecorator do
 
     it 'the value of description should be description' do
       expect(job_decorator.description).to match('description')
-    end
-
-    it 'the value of occ_id should be occ_id' do
-      expect(job_decorator.occ_id).to match('occ_id')
     end
 
     it 'the value of sector should be sector' do

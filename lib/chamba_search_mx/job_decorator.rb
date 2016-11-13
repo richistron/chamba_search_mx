@@ -1,4 +1,4 @@
-module OccSearch
+module ChambaSearchMx
   ##
   # cleaner job representation
   class JobDecorator
@@ -24,10 +24,6 @@ module OccSearch
 
     def description
       @options[:description]
-    end
-
-    def occ_id
-      @options[:occ_id]
     end
 
     def sector

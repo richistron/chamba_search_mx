@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe OccSearch::Finder do
-  finder = OccSearch::Finder.new
+describe ChambaSearchMx::Finder do
+  finder = ChambaSearchMx::Finder.new
 
   context 'smoke tests' do
     it 'should not allows empty searches' do

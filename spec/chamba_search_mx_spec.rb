@@ -1,29 +1,30 @@
 require 'spec_helper'
 
-describe OccSearch do
+describe ChambaSearchMx do
   context 'smoke tests' do
     context 'invalid parameters' do
       context 'invalid search' do
         it 'search with no hash key' do
-          test = proc { OccSearch.find 'invalid search' }
+          test = proc { ChambaSearchMx.find 'invalid search' }
           expect(&test).to raise_error(TypeError)
         end
 
         it 'search with non string search' do
-          expect { OccSearch.find(search: {}) }.to raise_error(ArgumentError)
+          test = proc { ChambaSearchMx.find(search: {}) }
+          expect(&test).to raise_error(ArgumentError)
         end
       end
 
       context 'invalid location' do
         it 'invalid location' do
           test = proc do
-            OccSearch.find(search: 'web developer', location: 'tu cola')
+            ChambaSearchMx.find(search: 'web developer', location: 'tu cola')
           end
           expect(&test).to raise_error(ArgumentError)
         end
         it 'invalid location' do
           test = proc do
-            OccSearch.find(search: 'web developer', location: 5)
+            ChambaSearchMx.find(search: 'web developer', location: 5)
           end
           expect(&test).to raise_error(ArgumentError)
         end
@@ -32,13 +33,13 @@ describe OccSearch do
       context 'invalid salary' do
         it 'invalid salary' do
           test = proc do
-            OccSearch.find(search: 'web developer', salary: 5)
+            ChambaSearchMx.find(search: 'web developer', salary: 5)
           end
           expect(&test).to raise_error(ArgumentError)
         end
         it 'invalid salary' do
           test = proc do
-            OccSearch.find(search: 'web developer', salary: 'cien')
+            ChambaSearchMx.find(search: 'web developer', salary: 'cien')
           end
           expect(&test).to raise_error(ArgumentError)
         end
@@ -47,13 +48,13 @@ describe OccSearch do
       context 'invalid days' do
         it 'invalid days' do
           test = proc do
-            OccSearch.find(search: 'web developer', days: 'adfadf')
+            ChambaSearchMx.find(search: 'web developer', days: 'adfadf')
           end
           expect(&test).to raise_error(ArgumentError)
         end
         it 'invalid days' do
           test = proc do
-            OccSearch.find(search: 'web developer', days: '15')
+            ChambaSearchMx.find(search: 'web developer', days: '15')
           end
           expect(&test).to raise_error(ArgumentError)
         end
@@ -72,7 +73,7 @@ describe OccSearch do
         location: 'jal',
         salary: '15000-20000'
       }
-      jobs = OccSearch.find(search_options)
+      jobs = ChambaSearchMx.find(search_options)
 
       it 'should have a businesses method' do
         businesses = jobs.map(&:businesses)
